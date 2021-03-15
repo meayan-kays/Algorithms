@@ -1,0 +1,36 @@
+ALGORITHM Strings_Functions
+VAR
+    sentence : STRING;
+    count : INTEGER:=0;
+    longueur : INTEGER;
+    current : CHAR:=' ';
+    previous : CHAR:=' ';
+    nbWords : INTEGER:=0;
+    nbWowrls : INTEGER:=0;
+BEGIN
+    //Length of Sentence
+    Write("Enter a sentence which ends with a point :");
+    Read(sentence);
+    WHILE (sentence[count] <> '.') DO
+        count = count + 1;
+    END_WHILE
+    longueur = count + 1;
+    Write("The sentence's length is : ", longueur);
+    // Number of Words in the senrence
+    FOR i FROM 0 TO longueur STEP step  DO
+        previous = current;
+        current = sentence[i];
+        IF (previous = ' ' and current <> ' ') THEN
+            nbWords = nbWords + 1;
+        END_IF
+    END_FOR
+    Write("The sentence contains ", nbWords, " Words");
+    // Number of Vowels in the senrence
+    FOR i FROM 0 TO longueur STEP step  DO
+        IF (sentence[i]='a' or sentence[i]='A' or sentence[i]='e' or sentence[i]='E' or sentence[i]='i' or sentence[i]='I'
+            sentence[i]='o' or sentence[i]='O' or sentence[i]='u' or sentence[i]='u' sentence[i]='y' or sentence[i]='Y') THEN
+            nVowels = nbVowels + 1;
+        END_IF
+    END_FOR
+    Write("The sentence containts ", nbVowels, " Vowels");
+END
